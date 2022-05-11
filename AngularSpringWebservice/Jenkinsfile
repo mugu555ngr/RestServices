@@ -1,4 +1,8 @@
 node {
+	tools {
+		maven 'Maven 3.8'
+		jdk 'Jdk9'
+	}
     dir('spring-jenkins-pipeline') {
     	stage('build') {
     		sh 'mvn --version'
