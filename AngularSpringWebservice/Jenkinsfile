@@ -1,12 +1,7 @@
-pipeline {
-    agent any
-    dir('AngularSpringWebservice') {
-    stages {
-        stage('build') {
-            steps {
-                sh 'mvn --version'
-            }
-        }
-    }
-    }
+node {
+    dir('spring-jenkins-pipeline') {
+    	stage('build') {
+    		sh 'mvn --version'
+    	}
+    } 
 }
