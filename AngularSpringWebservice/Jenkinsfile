@@ -1,11 +1,13 @@
-node {
-	tools {
-		maven 'Maven 3.8'
-		jdk 'Jdk9'
-	}
-    dir('spring-jenkins-pipeline') {
-    	stage('build') {
-    		sh 'mvn --version'
-    	}
-    } 
-}
+pipeline {
+  agent any
+  tools {
+    maven 'Maven 3.8' 
+  }
+  stages {
+    stage ('Build') {
+      steps {
+        sh 'mvn clean package'
+      }
+    }
+   }
+  }
